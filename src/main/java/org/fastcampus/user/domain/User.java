@@ -12,6 +12,10 @@ public class User {
 //  private final String profileImageUrl;
 
   public User(Long id, UserInfo userInfo) {
+    if (userInfo == null) {
+      throw new IllegalArgumentException("userInfo cannot be null");
+    }
+
     this.id = id;
     this.info = userInfo;
     this.followingCounter = new PositiveIntegerCounter();
@@ -62,6 +66,14 @@ public class User {
   @Override
   public int hashCode() {
     return Objects.hashCode(id);
+  }
+
+  public int followingCount() {
+    return this.followingCounter.getCount();
+  }
+
+  public int followerCount() {
+    return this.followerCounter.getCount();
   }
 
   public Long getId() {
