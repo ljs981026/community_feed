@@ -25,6 +25,7 @@ public class Post {
     this(id, author, content, PostPublicationState.PUBLIC);
   }
 
+
   public Post(Long id, User author, Content content, PostPublicationState state) {
     if (author == null) {
       throw new IllegalArgumentException();
@@ -62,5 +63,17 @@ public class Post {
 
   public String getContent() {
     return content.getContentText();
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public User getAuthor() {
+    return author;
+  }
+
+  public Content getContentObject() {
+    return content;
   }
 }
