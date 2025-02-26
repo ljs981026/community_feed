@@ -6,7 +6,7 @@ import org.fastcampus.user.domain.User;
 import org.fastcampus.user.domain.UserInfo;
 import org.springframework.stereotype.Service;
 
-@Service
+
 public class UserService {
   private final UserRepository userRepository;
 
